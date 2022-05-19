@@ -1,12 +1,28 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-const FeedbackItem = ({ item }) => {
+import { FaTimes } from "react-icons/fa";
+
+import Card from "./shared/Card";
+
+const FeedbackItem = ({ item, handleFeedback }) => {
   return (
-    <div className="card">
+    <Card>
       <div className="num-display">{item.rating}</div>
       <div className="text-display">{item.text}</div>
-    </div>
+      <button
+        className="close"
+        onClick={() => {
+          handleFeedback(item.id);
+        }}
+      >
+        <FaTimes color="purple" />
+      </button>
+    </Card>
   );
+};
+
+FeedbackItem.propTypes = {
+  item: PropTypes.object.isRequired,
 };
 
 export default FeedbackItem;
