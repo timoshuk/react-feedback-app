@@ -1,4 +1,4 @@
-export const feetbackData = [
+export const feedbackData = [
   {
     id: 1,
     rating: 10,
