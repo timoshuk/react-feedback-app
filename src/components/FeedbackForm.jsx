@@ -41,7 +41,6 @@ const FeedbackForm = () => {
     e.preventDefault();
     if (text.trim().length >= 10) {
       const newFeedback = {
-        id: asuuidv4(),
         text,
         rating,
       };
